@@ -30,12 +30,13 @@ header {
 .topnav {
     background: transparent;
     height: 30%;
-    width: 40%;
+    width: 20%;
     border: 1px;
     border-radius: 10px;
     display: flex;
     align-items: center;
-    margin-left: auto;
+    margin-left: 30%;
+    margin-right: auto;
 }
 
 .topnav a {

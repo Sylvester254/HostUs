@@ -16,6 +16,7 @@
 }
 
 .places>article {
+    background-color: white;
     width: 390px;
     padding: 20px 20px 20px 20px;
     margin: 20px 20px 20px 20px;
@@ -33,7 +34,7 @@
     align-self: center;
 }
 
-.price_by_night {
+.rent {
     color: #FF5A5F;
     border: 4px solid #7759fc;
     min-width: 60px;
@@ -49,7 +50,7 @@
     right: 20px;
 }
 
-.price_by_night>p {
+.rent>p {
     margin: 0 0 0 0;
 }
 
@@ -65,21 +66,21 @@
     align-items: center;
 }
 
-.max_guest,
+.max_student,
 .number_rooms,
 .number_bathrooms {
     width: 100px;
     text-align: center;
 }
 
-.max_guest>p,
+.max_student>p,
 .number_rooms>p,
 .number_bathrooms>p {
     margin-top: auto;
     margin-bottom: auto;
 }
 
-.guest_image {
+.student_image {
     margin-left: auto;
     margin-right: auto;
     height: 50px;
