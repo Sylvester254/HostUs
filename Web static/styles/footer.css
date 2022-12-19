@@ -1,8 +1,10 @@
 footer {
+    color: white;
+    background: linear-gradient(90deg, #3F2B96 0%, #A8C0FF 100%);
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: white;
+    /* background-color: white; */
     height: 60px;
     border-top: 1px;
     display: flex;
