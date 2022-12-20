@@ -1,0 +1,15 @@
+body {
+    background: linear-gradient(90deg, #3F2B96 0%, #A8C0FF 100%);
+    margin: 0;
+    padding: 0;
+    color: #484848;
+    font-size: 14px;
+    font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+a {
+    color: #484848;
+    font-size: 14px;
+    font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-decoration: none;
+}

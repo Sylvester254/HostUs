@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <link rel="stylesheet" href="./styles/login.css">
-    <link rel="stylesheet" href="styles/header.css">
-    <link rel="stylesheet" href="styles/common.css">
-    <link rel="icon " href="./styles/images/icon50x50.png " type="image/png ">
+    <link rel="stylesheet" href="../styles/login.css">
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/common.css">
+    <link rel="icon " href="../styles/images/icon50x50.png " type="image/png ">
     <title>Login Page</title>
 </head>
 
@@ -34,24 +33,24 @@
                     <div class="msg">{{ msg }}</div>
 
                     <div class="inputBx">
-                        <input type="text" name="Owner_name" placeholder="*Full-name" id="Owner_name" oninput="validation()" required autofocus>
+                        <input type="text" name="Owner_name" placeholder="*Full-name" id="Owner_name" required autofocus>
                     </div>
                     <div class="inputBx">
-                        <input type="email" name="Email" placeholder="Email" id="*Email" oninput="validation()" required autofocus>
+                        <input type="email" name="Email" placeholder="Email" id="*Email" required autofocus>
                     </div>
                     <div class="inputBx">
                         <input type="text" name="Phone_no" placeholder="Phone_no" id="Phone_no">
                     </div>
                     <div class="inputBx">
-                        <input type="text" name="username" placeholder="*Username" id="username" oninput="validation()" required autofocus>
+                        <input type="text" name="username" placeholder="*Username" id="username" required autofocus>
                         <!-- <img src="./" alt=""> -->
                     </div>
                     <div class="inputBx">
-                        <input type="password" name="passward" id="password" placeholder="*Passward" oninput="validation()" required>
+                        <input type="password" name="passward" id="password" placeholder="*Passward" required>
                         <!-- <img src="" alt=""> -->
                     </div>
                     <div class="inputBx">
-                        <input type="submit" name="submit" value="Sign-in" id="submit" disabled>
+                        <input type="submit" name="submit" value="Sign-in" id="submit">
                     </div>
                 </form>
                 <div><span style="float: left;"><a href="#">Forgot Password </a></span>
@@ -61,20 +60,6 @@
 
         </div>
     </section>
-    <script type="text/javascript">
-        function validation() {
-            let name = document.getElementById("Owner_name").value;
-            let email = document.getElementById("Email").value;
-            let username = document.getElementById("username").value;
-            let pass = document.getElementById("password").value;
-            if (name != "" && email != "" && username != "" && pass != "") {
-                document.getElementById("submit").disabled = false;
-            } else {
-                document.getElementById("submit").disabled = true;
-            }
-        }
-    </script>
-
 </body>
 
 </html>

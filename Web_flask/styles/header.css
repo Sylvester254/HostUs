@@ -1,0 +1,74 @@
+header {
+    width: 100%;
+    background: linear-gradient(90deg, #3F2B96 0%, #A8C0FF 100%);
+    height: 100px;
+    border-bottom: 1px;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 142px;
+    height: 100px;
+    background: url("./images/logo150x90.png") no-repeat center;
+    padding-left: 20px;
+}
+
+
+/* .menu {
+    margin-right: auto;
+    margin-left: 75%;
+}
+
+.menu div {
+    width: 25px;
+    height: 4px;
+    background-color: white;
+    margin: 4px 0;
+} */
+
+.topnav {
+    background: transparent;
+    height: 30%;
+    width: 20%;
+    border: 1px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    margin-left: 30%;
+    margin-right: auto;
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    color: black;
+}
+
+button {
+    background-color: #7759fc;
+    height: 30px;
+    border: 0px;
+    border-radius: 15px;
+    width: 5%;
+    margin-left: auto;
+    margin-right: 30px;
+    opacity: 5;
+}
+
+button a {
+    font-size: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+button:hover {
+    opacity: 0.7;
+}
