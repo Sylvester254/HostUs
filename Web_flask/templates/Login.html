@@ -34,7 +34,8 @@
             <div class="form">
                 <img src="./styles/images/user.png" class="user" alt="">
                 <h2>Login to your Account</h2>
-                <form class="" action="index.html" method="post" enctype="multipart/form-data">
+                <form class="" action="{{ url_for('login')}}" method="post" enctype="multipart/form-data">
+                    <div class="msg">{{ msg }}</div>
 
                     <div class="inputBx">
                         <input type="text" name="username" placeholder="*Username" id="username" oninput="validation()" required autofocus>
@@ -50,7 +51,7 @@
                     </div>
                 </form>
                 <div><span style="float: left;"><a href="#">Forgot Passward </a></span>
-                    <span style="float:right;"><a href="./signup.html">New user?Sign-in</a></span></div>
+                    <span style="float:right;"><a href="{{ url_for('register')}}">New user?Sign-in</a></span></div>
 
             </div>
 

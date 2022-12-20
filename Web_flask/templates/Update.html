@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/profile.css">
+    <link rel="stylesheet" href="./styles/login.css">
+    <link rel="stylesheet" href="./styles/common.css">
+    <link rel="icon " href="./styles/images/icon50x50.png " type="image/png ">
+    <title>Profile</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo ">
+        </div>
+        <div class="topnav">
+            <a href="Index.html">Home</a>
+            <a href="Contact.html">Contact</a>
+            <a href="About.html">About</a>
+        </div>
+        <button>
+            <a href="{{url_for('logout')}}">Logout</a>
+        </button>
+        </a>
+    </header>
+    <div class="one">
+        <div class="two">
+            <h1>Menu</h1>
+            <ul>
+                <li>
+                    <a href="{{url_for('profile')}}">Profile</a>
+                </li>
+                <li>
+                    <a href="{{url_for('manage')}}">Manage Hostels</a>
+                </li>
+                <li class="active"><a href="{{url_for('update')}}">Update Profile</a></li>
+            </ul>
+        </div>
+    </div>
+    <section>
+        <div class="box">
+
+            <div class="form">
+                <!-- <img src="./styles/images/user.png" class="user" alt=""> -->
+                <h2>Update Profile</h2>
+                <form class="" action="{{ url_for('update')}}" method="post" enctype="multipart/form-data">
+                    <div class="msg">{{ msg }}</div>
+
+                    <div class="inputBx">
+                        <input type="text" name="Owner_name" placeholder="*Full-name" id="Owner_name" required autofocus>
+                    </div>
+                    <div class="inputBx">
+                        <input type="email" name="Email" placeholder="Email" id="*Email" required autofocus>
+                    </div>
+                    <div class="inputBx">
+                        <input type="text" name="Phone_no" placeholder="Phone_no" id="Phone_no">
+                    </div>
+                    <div class="inputBx">
+                        <input type="text" name="username" placeholder="*Username" id="username" required autofocus>
+
+                    </div>
+                    <div class="inputBx">
+                        <input type="password" name="passward" id="password" placeholder="*Passward" required>
+
+                    </div>
+                    <div class="inputBx">
+                        <input type="submit" name="submit" value="Update" id="submit">
+                    </div>
+                </form>
+                <!-- <div><span style="float: left;"><a href="#">Cancel</a></span>
+                    <span style="float:right;"><a >Submit</a></span></div> -->
+
+            </div>
+
+        </div>
+    </section>
+    <footer>
+        <p>
+            Hostel Booking
+        </p>
+    </footer>
+</body>
+
+</html>
