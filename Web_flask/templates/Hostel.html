@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/hostel.css') }}?{{ cache_id }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/header.css') }}?{{ cache_id }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/footer.css') }}?{{ cache_id }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/common.css') }}?{{ cache_id }}" />
+    <link rel="icon " href="{{ url_for('static', filename='images/icon50x50.png') }}?{{ cache_id }}" />
+    <title>HostUs</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo ">
+        </div>
+        <!-- <div class="menu">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div> -->
+        <div class="topnav">
+            <a href="{{ url_for('index')}}">Home</a>
+            <a href="{{ url_for('contact')}}">Contact</a>
+            <a href="{{ url_for('about')}}">About</a>
+        </div>
+        <button>
+            <a href="{{ url_for('login')}}">Login</a>
+        </button>
+    </header>
+    <div class="container ">
+
+        <section class="places ">
+                <article>
+
+                    <h2>{{ Hostel_name }}</h2>
+
+                    <div class="rent ">
+                        <p>{{ Rent }}</p>
+                    </div>
+                    <div class="information ">
+                        <div class="max_student ">
+                            <div class="student_image "></div>
+                            <p>{{ Occupants }}</p>
+                        </div>
+                        <div class="number_rooms ">
+                            <div class="bed_image "></div>
+                            <p>{{ Rooms }} rooms</p>
+                        </div>
+                        <!-- <div class="number_bathrooms ">
+                            <div class="bath_image "></div>
+                            <p>1 Bathroom</p>
+                        </div> -->
+                    </div>
+                    <div class="user ">
+                        <p><b>Owner: </b>Kelvin Bart</p>
+                    </div>
+                    <div class="description ">
+                        <p>{{ Features }}</p>
+                    </div>
+                </article>
+        </section>
+    </div>
+    <footer>
+        <p>
+            Hostel Booking
+        </p>
+    </footer>
+</body>
+
+</html>
