@@ -34,11 +34,9 @@
         <div class="campus ">
             <h3>Campus:</h3>
             <ul class="popover ">
-                <li>Maseno University</li>
-                <li>Masinde Muliro University</li>
-                <li>Nairobi University</li>
-                <li>Daystar University</li>
-                <li></li>
+                {% for Campus in Hostel%}
+                <li>{{ Campus}}</li>
+                {% endfor %}
             </ul>
         </div>
         <div class="city ">

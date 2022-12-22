@@ -2,51 +2,54 @@ from flask import Flask, render_template, request, redirect, url_for, session
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
 import re
- 
- 
+
+
 app = Flask(__name__)
- 
- 
-app.secret_key = '12345'
- 
- 
+
+
+# app.secret_key = '12345'
+
+
 app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'sly'
+app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'toor'
 app.config['MYSQL_DB'] = 'hostus'
- 
- 
+
+
 mysql = MySQL(app)
- 
- 
+
+
 @app.route('/')
-@app.route('/login', methods =['GET', 'POST'])
+@app.route('/login/', strict_slashes=False, methods=['GET', 'POST'])
 def login():
     msg = ''
-    if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
-        username = request.form['username']
-        password = request.form['password']
+    if request.method == 'POST' and 'Username' in request.form and 'Password' in request.form:
+        Username = request.form['Username']
+        Password = request.form['Password']
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM accounts WHERE username = % s AND password = % s', (username, password, ))
+        cursor.execute(
+            'SELECT * FROM User WHERE Username = % s AND Password = % s', (Username, Password, ))
         account = cursor.fetchone()
         if account:
             session['loggedin'] = True
-            session['id'] = account['id']
-            session['username'] = account['username']
+            session['Owner_id'] = account['Owner_id']
+            session['Username'] = account['Username']
             msg = 'Logged in successfully !'
-            return render_template('Profile.html', msg = msg)
+            return render_template('Profile.html', msg=msg)
         else:
             msg = 'Incorrect username / password !'
-    return render_template('Login.html', msg = msg)
- 
+    return render_template('Login.html', msg=msg)
+
+
 @app.route('/logout')
 def logout():
-   session.pop('loggedin', None)
-   session.pop('id', None)
-   session.pop('username', None)
-   return redirect(url_for('login'))
- 
-@app.route('/register', methods =['GET', 'POST'])
+    session.pop('loggedin', None)
+    session.pop('id', None)
+    session.pop('username', None)
+    return redirect(url_for('login'))
+
+
+@app.route('/register', methods=['GET', 'POST'])
 def register():
     msg = ''
     if request.method == 'POST' and 'Owner_name' in request.form and 'Email' in request.form and 'Phone_no' in request.form and 'Username' in request.form and 'Password' in request.form:
@@ -56,7 +59,7 @@ def register():
         Username = request.form['Username']
         Password = request.form['Password']
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM accounts WHERE username = % s', (Username, ))
+        cursor.execute('SELECT * FROM User WHERE username = % s', (Username, ))
         account = cursor.fetchone()
         if account:
             msg = 'Account already exists !'
@@ -65,31 +68,33 @@ def register():
         elif not re.match(r'[A-Za-z0-9]+', Username):
             msg = 'name must contain only characters and numbers !'
         else:
-            cursor.execute('INSERT INTO accounts VALUES (NULL, % s, % s, % s, % s, % s)', (Owner_name, Email, Phone_no, Username, Password, ))
+            cursor.execute('INSERT INTO User VALUES (NULL, % s, % s, % s, % s, % s)',
+                           (Owner_name, Email, Phone_no, Username, Password, ))
             mysql.connection.commit()
             msg = 'You have successfully registered !'
     elif request.method == 'POST':
         msg = 'Please fill out the form !'
-    return render_template('Signup.html', msg = msg)
- 
- 
+    return render_template('Signup.html', msg=msg)
+
+
 # @app.route("/manage")
 # def manage():
 #     if 'loggedin' in session:
 #         return render_template("Profile.html")
 #     return redirect(url_for('login'))
- 
- 
+
+
 @app.route("/profile")
 def profile():
     if 'loggedin' in session:
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM accounts WHERE id = % s', (session['id'], ))
-        account = cursor.fetchone()   
-        return render_template("Profile.html", account = account)
+        cursor.execute('SELECT * FROM User WHERE id = % s', (session['id'], ))
+        account = cursor.fetchone()
+        return render_template("Profile.html", account=account)
     return redirect(url_for('login'))
- 
-@app.route("/update", methods =['GET', 'POST'])
+
+
+@app.route("/update", methods=['GET', 'POST'])
 def update():
     msg = ''
     if 'loggedin' in session:
@@ -100,7 +105,8 @@ def update():
             Username = request.form['Username']
             Password = request.form['Password']
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-            cursor.execute('SELECT * FROM accounts WHERE username = % s', (Username, ))
+            cursor.execute(
+                'SELECT * FROM User WHERE username = % s', (Username, ))
             account = cursor.fetchone()
             if account:
                 msg = 'Account already exists !'
@@ -109,13 +115,15 @@ def update():
             elif not re.match(r'[A-Za-z0-9]+', Username):
                 msg = 'name must contain only characters and numbers !'
             else:
-                cursor.execute('UPDATE accounts SET  Owner_name =% s, Email =% s, Phone_no =% s, Username =% s, Password =% s', (Owner_name, Email, Phone_no, Username, Password, (session['id'], ), ))
+                cursor.execute('UPDATE User SET  Owner_name =% s, Email =% s, Phone_no =% s, Username =% s, Password =% s', (
+                    Owner_name, Email, Phone_no, Username, Password, (session['id'], ), ))
                 mysql.connection.commit()
                 msg = 'You have successfully updated !'
         elif request.method == 'POST':
             msg = 'Please fill out the form !'
-        return render_template("Update.html", msg = msg)
+        return render_template("Update.html", msg=msg)
     return redirect(url_for('login'))
- 
+
+
 if __name__ == "__main__":
-    app.run(host ="localhost", port = int("5000"))
+    app.run(host='0.0.0.0', port=5001)

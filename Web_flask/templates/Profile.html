@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/header.css">
-    <link rel="stylesheet" href="../styles/footer.css">
-    <link rel="stylesheet" href="../styles/profile.css">
-    <link rel="stylesheet" href="../styles/common.css">
-    <link rel="icon " href="../styles/images/icon50x50.png " type="image/png ">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/profile.css') }}?{{ cache_id }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/header.css') }}?{{ cache_id }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/footer.css') }}?{{ cache_id }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/common.css') }}?{{ cache_id }}"/>
+    <link rel="icon " href="{{ url_for('static', filename='images/icon50x50.png') }}?{{ cache_id }}"/>
     <title>Profile</title>
 </head>
 

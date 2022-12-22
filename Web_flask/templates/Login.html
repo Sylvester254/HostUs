@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../styles/login.css">
-    <link rel="stylesheet" href="../styles/header.css">
-    <link rel="stylesheet" href="../styles/common.css">
-    <link rel="icon " href="../styles/images/icon50x50.png " type="image/png ">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/login.css') }}?{{ cache_id }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/header.css') }}?{{ cache_id }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/common.css') }}?{{ cache_id }}"/>
+    <link rel="icon " href="{{ url_for('static', filename='images/icon50x50.png') }}?{{ cache_id }}"/>
     <title>Login Page</title>
 </head>
 
@@ -32,18 +32,18 @@
         <div class="box">
 
             <div class="form">
-                <img src="./styles/images/user.png" class="user" alt="">
+                <img src={{ url_for('static', filename='images/user.png') }}  class="user" alt="">
                 <h2>Login to your Account</h2>
                 <form class="" action="{{ url_for('login')}}" method="post" enctype="multipart/form-data">
-                    <div class="msg">{{ msg }}</div>
+                    <div class="msg" style="color: white;">{{ msg }}</div>
 
                     <div class="inputBx">
-                        <input type="text" name="username" placeholder="*Username" id="username" oninput="validation()" required autofocus>
-                        <!-- <img src="./" alt=""> -->
+                        <input type="text" name="Username" placeholder="*Username" id="Username" oninput="validation()" required autofocus>
+                        
                     </div>
                     <div class="inputBx">
-                        <input type="password" name="passward" id="password" placeholder="*Passward" oninput="validation()" required>
-                        <!-- <img src="" alt=""> -->
+                        <input type="password" name="Passward" id="Password" placeholder="*Passward" oninput="validation()" required>
+    
                     </div>
                     <label class="remeber"><input type="checkbox"> Remember Me</label>
                     <div class="inputBx">
@@ -59,8 +59,8 @@
     </section>
     <script type="text/javascript">
         function validation() {
-            let username = document.getElementById("username").value;
-            let pass = document.getElementById("password").value;
+            let username = document.getElementById("Username").value;
+            let pass = document.getElementById("Password").value;
             if (username != "" && pass != "") {
                 document.getElementById("submit").disabled = false;
             } else {

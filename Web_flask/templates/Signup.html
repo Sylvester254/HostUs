@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../styles/login.css">
-    <link rel="stylesheet" href="../styles/header.css">
-    <link rel="stylesheet" href="../styles/common.css">
-    <link rel="icon " href="../styles/images/icon50x50.png " type="image/png ">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/login.css') }}?{{ cache_id }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/header.css') }}?{{ cache_id }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/common.css') }}?{{ cache_id }}"/>
+    <link rel="icon " href="{{ url_for('static', filename='images/icon50x50.png') }}?{{ cache_id }}"/>
     <title>Login Page</title>
 </head>
 
@@ -27,10 +27,10 @@
         <div class="box">
 
             <div class="form">
-                <img src="./styles/images/user.png" class="user" alt="">
+                <img src={{ url_for('static', filename='images/user.png') }} class="user" alt="">
                 <h2>Register</h2>
                 <form class="" action="{{ url_for('register')}}" method="post" enctype="multipart/form-data">
-                    <div class="msg">{{ msg }}</div>
+                    <div class="msg" style="color: white;">{{ msg }}</div>
 
                     <div class="inputBx">
                         <input type="text" name="Owner_name" placeholder="*Full-name" id="Owner_name" required autofocus>
@@ -42,19 +42,19 @@
                         <input type="text" name="Phone_no" placeholder="Phone_no" id="Phone_no">
                     </div>
                     <div class="inputBx">
-                        <input type="text" name="username" placeholder="*Username" id="username" required autofocus>
+                        <input type="text" name="Username" placeholder="*Username" id="Username" required autofocus>
                         <!-- <img src="./" alt=""> -->
                     </div>
                     <div class="inputBx">
-                        <input type="password" name="passward" id="password" placeholder="*Passward" required>
+                        <input type="password" name="Passward" id="Password" placeholder="*Passward" required>
                         <!-- <img src="" alt=""> -->
                     </div>
                     <div class="inputBx">
                         <input type="submit" name="submit" value="Sign-in" id="submit">
                     </div>
                 </form>
-                <div><span style="float: left;"><a href="#">Forgot Password </a></span>
-                    <span style="float:right;"><a href="{{ url_for('login')}}">Registered?Log-in</a></span></div>
+                <!-- <div><span style="float: left;"><a href="#">Forgot Password </a></span> -->
+                    <span style="float:left;"><a href="{{ url_for('login')}}">Registered?Log-in</a></span></div>
 
             </div>
 
