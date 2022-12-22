@@ -19,9 +19,9 @@
         <div class="logo ">
         </div>
         <div class="topnav">
-            <a href="Index.html">Home</a>
-            <a href="Contact.html">Contact</a>
-            <a href="About.html">About</a>
+            <a href="{{ url_for('index')}}">Home</a>
+            <a href="{{ url_for('contact')}}">Contact</a>
+            <a href="{{ url_for('about')}}">About</a>
         </div>
         <button>
             <a href="{{url_for('logout')}}">Logout</a>

@@ -20,6 +20,15 @@ mysql = MySQL(app)
 
 
 @app.route('/')
+@app.route('/index/', strict_slashes=False)
+def index():
+    """ Display home page and all the hostels"""
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute('SELECT * FROM Hostel')
+    hostel = cursor.fetchone()
+    return render_template("Index.html", hostel=hostel)
+
+
 @app.route('/login/', strict_slashes=False, methods=['GET', 'POST'])
 def login():
     msg = ''
@@ -123,6 +132,27 @@ def update():
             msg = 'Please fill out the form !'
         return render_template("Update.html", msg=msg)
     return redirect(url_for('login'))
+
+
+@app.route('/about')
+def about():
+    """ Display About page"""
+    return render_template("About.html")
+
+
+@app.route('/contact')
+def contact():
+    """ Display Contact page"""
+    return render_template("Contact.html")
+
+
+@app.route('/index/<Hostel_id>')
+def hostel():
+    """ Display hostel page for the requested hostel at home page"""
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute('SELECT * FROM Hostel WHERE Hostel_id = % s', (session['Hostel_id'], ))
+    hostel = cursor.fetchone()
+    return render_template("Hostel.html", hostel=hostel)
 
 
 if __name__ == "__main__":
