@@ -32,6 +32,10 @@
 > NOTE: more features will be added.
 
 ## Technologies
+- HTML&CSS
+- JS
+- Flask framework
+- MySQL
 
 ## Author
 - GitHub: [Sylvester Ng'ang'a]()
