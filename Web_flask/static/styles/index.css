@@ -7,6 +7,13 @@
     justify-content: center;
 }
 
+@media only screen and (max-width: 920px) {
+    .places {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
 .places>h1 {
     color: white;
     font-size: 30px;
@@ -86,7 +93,7 @@
     margin-right: auto;
     height: 50px;
     width: 50px;
-    background: url("./images/icon_group.png") no-repeat center;
+    background: url("../images/icon_group.png") no-repeat center;
 }
 
 .bed_image {
@@ -94,7 +101,7 @@
     margin-right: auto;
     height: 50px;
     width: 50px;
-    background: url("./images/icon_bed.png") no-repeat center;
+    background: url("../images/icon_bed.png") no-repeat center;
 }
 
 .bath_image {

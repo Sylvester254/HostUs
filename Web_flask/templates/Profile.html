@@ -25,19 +25,18 @@
         <button>
             <a href="{{url_for('logout')}}">Logout</a>
         </button>
-        </a>
     </header>
     <div class="one">
         <div class="two">
             <h1>Menu</h1>
             <ul>
                 <li class="active">
-                    <a href="{{url_for('profile')}}">Profile</a>
+                    <a href="#">Profile</a>
                 </li>
                 <li>
-                    <a href="{{url_for('display')}}">Manage Hostels</a>
+                    <a href="#">Manage Hostels</a>
                 </li>
-                <li><a href="{{url_for('update')}}">Update Profile</a></li>
+                <li><a href="#">Update Profile</a></li>
             </ul>
         </div>
         <div class="content">
@@ -51,27 +50,29 @@
                         </br>
                         </br>
                         </br>
+                        
                         <tr>
                             <td>Full name:</td>
-                            <td>{{ account['Owner_name'] }}</td>
+                            <td>{{ account.Owner_name }}</td>
+                           
                         </tr>
                         <tr>
                             <td>Email ID:</td>
-                            <td>{{ account['Email'] }}</td>
+                            <td>{{ account.Email }}</td>
                         </tr>
                         <tr>
                             <td>Contact:</td>
-                            <td>{{ account['Phone_no'] }}</td>
+                            <td>{{ account.Phone_no }}</td>
                         </tr>
                         <tr>
                             <td>Username:</td>
-                            <td>{{ account['Username'] }}</td>
+                            <td>{{ account.Username }}</td>
                         </tr>
                         <tr>
                             <td>Password:</td>
-                            <td>{{ account['Password'] }}</td>
+                            <td>{{ account.Password }}</td>
                         </tr>
-
+                        
                     </table>
                 </div>
                 {% endblock %}

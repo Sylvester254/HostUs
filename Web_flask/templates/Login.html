@@ -34,15 +34,14 @@
             <div class="form">
                 <img src={{ url_for('static', filename='images/user.png') }}  class="user" alt="">
                 <h2>Login to your Account</h2>
-                <form class="" action="{{ url_for('login')}}" method="post" enctype="multipart/form-data">
+                <form class="" action="{{ url_for('login')}}" method="POST" enctype="multipart/form-data">
                     <div class="msg" style="color: white;">{{ msg }}</div>
 
                     <div class="inputBx">
                         <input type="text" name="Username" placeholder="*Username" id="Username" oninput="validation()" required autofocus>
-                        
                     </div>
                     <div class="inputBx">
-                        <input type="password" name="Passward" id="Password" placeholder="*Passward" oninput="validation()" required>
+                        <input type="password" name="Password" id="Password" placeholder="*Password" oninput="validation()" required>
     
                     </div>
                     <label class="remeber"><input type="checkbox"> Remember Me</label>

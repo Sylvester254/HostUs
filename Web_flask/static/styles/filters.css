@@ -62,6 +62,10 @@ section.filters>button:hover {
     z-index: 1;
     padding: 30px 50px 30px 0;
     margin-top: 5px;
+    height: 150px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    max-height: 150px;
 }
 
 .popover,
@@ -83,7 +87,7 @@ section.filters>button:hover {
 }
 
 .campus>.popover>li {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     margin-left: 30px;
 }
 

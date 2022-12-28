@@ -34,16 +34,16 @@
         <div class="campus ">
             <h3>Campus:</h3>
             <ul class="popover ">
-                {% for Campus in Hostel%}
-                <li>{{ Campus}}</li>
+                {% for campus in hostel%}
+                <li><input type="checkbox" data-id="{{ campus.Hostel_id }}" data-name="{{ campus.Hostel_name }}" />{{ campus.Campus}}</li>
                 {% endfor %}
             </ul>
         </div>
         <div class="city ">
             <h3>City:</h3>
             <ul class="popover ">
-                {% for City in Hostel%}
-                <li>{{ City}}</li>
+                {% for location in hostel%}
+                <li><input type="checkbox" data-id="{{ location.Hostel_id }}" data-name="{{ location.Hostel_name }}" />{{ location.Location}}</li>
                 {% endfor %}
             </ul>
         </div>
@@ -52,26 +52,25 @@
         </button>
     </section>
     <div class="container ">
-
         <section class="places ">
             <h1>Hostels</h1>
-            {% for Hostel_id in Hostel%}
-            <a href="{{ url_for('hostel')}}">
+            {% for place in hostel%}
+            <a href="{{ url_for('hostels')}}">
                 <article>
 
-                    <h2>{{ Hostel_name }}</h2>
+                    <h2>{{ place.Hostel_name }}</h2>
 
                     <div class="rent ">
-                        <p>{{ Rent }}</p>
+                        <p>${{ place.Rent }}</p>
                     </div>
                     <div class="information ">
                         <div class="max_student ">
                             <div class="student_image "></div>
-                            <p>{{ Occupants }}</p>
+                            <p>{{ place.Occupants }}</p>
                         </div>
                         <div class="number_rooms ">
                             <div class="bed_image "></div>
-                            <p>{{ Rooms }} rooms</p>
+                            <p>{{ place.Rooms }} rooms</p>
                         </div>
                         <!-- <div class="number_bathrooms ">
                             <div class="bath_image "></div>
@@ -82,13 +81,14 @@
                         <p><b>Owner: </b>Kelvin Bart</p>
                     </div>
                     <div class="description ">
-                        <p>{{ Features }}</p>
+                        <p>{{ place.Features }}</p>
                     </div>
                 </article>
             </a>
             {% endfor %}
         </section>
     </div>
+    
     <footer>
         <p>
             Hostel Booking
