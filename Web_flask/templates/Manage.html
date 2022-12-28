@@ -1,0 +1,92 @@
+<html lang="en">
+
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/login.css') }}?{{ cache_id }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/header.css') }}?{{ cache_id }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/common.css') }}?{{ cache_id }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/profile.css') }}?{{ cache_id }}"/>
+    <link rel="icon " href="{{ url_for('static', filename='images/icon50x50.png') }}?{{ cache_id }}"/>
+    <title>Manage hostel</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo ">
+        </div>
+        <div class="topnav">
+            <a href="{{ url_for('index')}}">Home</a>
+            <a href="{{ url_for('contact')}}">Contact</a>
+            <a href="{{ url_for('about')}}">About</a>
+        </div>
+        <button>
+            <a href="{{url_for('logout')}}">Logout</a>
+        </button>
+    </header>
+    <div class="one">
+        <div class="two">
+            <h1>Menu</h1>
+            <ul>
+                <li>
+                    <a href="#">Profile</a>
+                </li>
+                <li class="active">
+                    <a href="{{url_for('manage')}}">Manage Hostels</a>
+                </li>
+                <li><a href="#">Update Profile</a></li>
+            </ul>
+        </div>
+    </div>
+    <section>
+        <div class="box">
+
+            <div class="form">
+                <h2>Manage Hostel</h2>
+                <form class="" action="{{ url_for('manage')}}" method="post" enctype="multipart/form-data">
+                    <div class="msg" style="color: white;">{{ msg }}</div>
+
+                    <div class="inputBx">
+                        <input type="text" name="Hostel_name" placeholder="*Hostel-name" id="Hostel_name" required autofocus>
+                    </div>
+                    <div class="inputBx">
+                        <input type="text" name="Features" placeholder="Features" id="*Features" required autofocus>
+                    </div>
+                    <div class="inputBx">
+                        <input type="text" name="Location" placeholder="Location" id="Location">
+                    </div>
+                    <div class="inputBx">
+                        <input type="text" name="Campus" placeholder="*Campus" id="Campus" required autofocus>
+                        
+                    </div>
+                    <div class="inputBx">
+                        <input type="integer" name="Occupants" id="Occupants" placeholder="*Occupants" required>
+                        
+                    </div>
+                    <div class="inputBx">
+                        <input type="integer" name="Rooms" id="Rooms" placeholder="*Rooms" required>
+                        
+                    </div>
+                    <div class="inputBx">
+                        <input type="text" name="WiFi" id="WiFi" placeholder="*WiFi" required>
+                        
+                    </div>
+                    <div class="inputBx">
+                        <input type="integer" name="Rent" id="Rent" placeholder="*Rent" required>
+                        
+                    </div>
+                    <div class="inputBx">
+                        <input type="submit" name="submit" value="Post" id="submit">
+                    </div>
+                </form>
+               
+
+            </div>
+
+        </div>
+    </section>
+</body>
+
+</html>
