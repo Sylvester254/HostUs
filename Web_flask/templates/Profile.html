@@ -18,11 +18,11 @@
     <header>
         <div class="logo ">
         </div>
-        <div class="topnav">
+        <!--<div class="topnav">
             <a href="{{ url_for('index')}}">Home</a>
             <a href="{{ url_for('contact')}}">Contact</a>
             <a href="{{ url_for('about')}}">About</a>
-        </div>
+        </div>-->
         <button>
             <a href="{{url_for('logout')}}">Logout</a>
         </button>
@@ -35,7 +35,7 @@
                     <a href="#">Profile</a>
                 </li>
                 <li>
-                    <a href="{{url_for('manage')}}">Manage Hostels</a>
+                    <a href="{{url_for('manage')}}">Add/Manage Hostels</a>
                 </li>
                 <li><a href="#">Update Profile</a></li>
             </ul>

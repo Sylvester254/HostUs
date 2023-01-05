@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/contact.css') }}?{{ cache_id }}" />
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/header.css') }}?{{ cache_id }}" />
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/footer.css') }}?{{ cache_id }}" />
@@ -34,9 +36,9 @@
                 <div class="container">
                     <h2>Jane Doe</h2>
                     <p class="title">CEO & Founder</p>
-                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                    <p>jane@example.com</p>
-                    <p><button class="button">Contact</button></p>
+                    <p class="body">Our CEO is a dynamic and experienced businesswoman who has a passion for providing quality accommodation for students. She has a strong background in the hospitality industry and has worked with a variety of hotels, hostels, and guesthouses over the years. She has a deep understanding of the needs and preferences of students and has used this knowledge to create a hostel booking programme that is tailored to their needs. Under her leadership, our hostel booking programme has become a trusted and reliable source for student accommodation.</p>
+                    <p>Email: janedoe@gmail.com</p>
+                    <!--<p><button class="button">Contact</button></p>-->
                 </div>
             </div>
         </div>
@@ -47,9 +49,9 @@
                 <div class="container">
                     <h2>Mike Ross</h2>
                     <p class="title">Software Engineer</p>
-                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                    <p>mike@example.com</p>
-                    <p><button class="button">Contact</button></p>
+                    <p class="body">Our software engineer is a skilled and dedicated professional who is responsible for developing and maintaining our hostel booking system. He is always working to improve the functionality and usability of our system, and is always looking for new ways to enhance the user experience. He is known for his problem-solving skills and his ability to think creatively, and he is a valuable member of our team.</p>
+                    <p>Email: mikeross@gmail.com</p>
+                    <!--<p><button class="button">Contact</button></p>-->
                 </div>
             </div>
         </div>
@@ -60,17 +62,21 @@
                 <div class="container">
                     <h2>John Doe</h2>
                     <p class="title">Web Designer</p>
-                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                    <p>john@example.com</p>
-                    <p><button class="button">Contact</button></p>
+                    <p class="body">Our web designer is a talented and creative individual who has a strong passion for creating user-friendly and visually appealing websites. He has extensive experience in web design and has worked with a variety of clients over the years. He is dedicated to creating websites that are easy to use and navigate, and that provide a seamless and enjoyable experience for users. He has played a key role in the development of our hostel booking system, ensuring that it is user-friendly, intuitive, and visually appealing.</p>
+                    <p>Email: john@gmail.com</p>
+                    <!--<p><button class="button">Contact</button></p>-->
                 </div>
             </div>
         </div>
     </div>
     <footer>
-        <p>
-            Hostel Booking
-        </p>
+        <p>Contact Us</p>
+        <div class="social">
+            <a href="#"><i class="fa-solid fa-phone"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa-brands fa-medium" aria-hidden="true"></i></a>
+        </div>
+        <p>Hostel Booking  <i class="fa-regular fa-copyright" aria-hidden="true"> 2023</i></p>
     </footer>
 </body>
 

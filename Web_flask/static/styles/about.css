@@ -32,3 +32,9 @@ html {
     padding: 20px;
     text-align: center;
 }
+
+.about-section .para {
+    font-family: 'Josefin sans';
+    font-weight: bold;
+    font-size: x-large;
+}
