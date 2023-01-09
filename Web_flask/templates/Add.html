@@ -32,12 +32,12 @@
             <h1>Menu</h1>
             <ul>
                 <li>
-                    <a href="#">Profile</a>
+                    <a href="{{url_for('profile', id=account.Owner_id)}}">Profile</a>
                 </li>
                 <li class="active">
-                    <a href="{{url_for('manage')}}">Add/Manage Hostels</a>
+                    <a href="{{url_for('add', id=account.Owner_id)}}">Add Hostels</a>
                 </li>
-                <li><a href="#">Update Profile</a></li>
+                <li><a href="{{url_for('update', id=account.Owner_id)}}">Update Profile</a></li>
             </ul>
         </div>
     </div>
@@ -45,8 +45,8 @@
         <div class="box">
 
             <div class="form">
-                <h2>Manage Hostel</h2>
-                <form class="" action="{{ url_for('manage')}}" method="post" enctype="multipart/form-data">
+                <h2>Add Hostel</h2>
+                <form class="" action="{{ url_for('add', id=account.Owner_id)}}" method="post" enctype="multipart/form-data">
                     <div class="msg" style="color: white;">{{ msg }}</div>
 
                     <div class="inputBx">

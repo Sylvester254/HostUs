@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/profile.css') }}?{{ cache_id }}"/>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/header.css') }}?{{ cache_id }}"/>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/footer.css') }}?{{ cache_id }}"/>
+    <!--<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/footer.css') }}?{{ cache_id }}"/>-->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/common.css') }}?{{ cache_id }}"/>
     <link rel="icon " href="{{ url_for('static', filename='images/icon50x50.png') }}?{{ cache_id }}"/>
     <title>Profile</title>
@@ -32,12 +32,12 @@
             <h1>Menu</h1>
             <ul>
                 <li class="active">
-                    <a href="#">Profile</a>
+                    <a href="{{url_for('profile', id=account.Owner_id)}}">Profile</a>
                 </li>
                 <li>
-                    <a href="{{url_for('manage')}}">Add/Manage Hostels</a>
+                    <a href="{{url_for('add', id=account.Owner_id)}}">Add Hostels</a>
                 </li>
-                <li><a href="#">Update Profile</a></li>
+                <li><a href="{{url_for('update', id=account.Owner_id)}}">Update Profile</a></li>
             </ul>
         </div>
         <div class="content">
@@ -69,10 +69,10 @@
                             <td>Username:</td>
                             <td>{{ account.Username }}</td>
                         </tr>
-                        <tr>
+                        <!--<tr>
                             <td>Password:</td>
                             <td>{{ account.Password }}</td>
-                        </tr>
+                        </tr>-->
                         
                     </table>
                 </div>
@@ -82,7 +82,7 @@
     </div>
     <footer>
         <p>
-            Hostel Booking
+            
         </p>
     </footer>
 </body>
