@@ -24,7 +24,7 @@ mysql = MySQL(app)
 def index():
     """ Display home page and all the hostels"""
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cursor.execute('SELECT * FROM Hostel')
+    cursor.execute('SELECT h.*, o.Owner_name, o.Email, o.Phone_no FROM Hostel h JOIN User o ON h.Owner_id = o.Owner_id')
     hostel = cursor.fetchall()
     return render_template("Index.html", hostel=hostel)
 
@@ -168,14 +168,12 @@ def contact():
     return render_template("Contact.html")
 
 
-@app.route('/hostels')
+@app.route('/hostels/<int:Hostel_id>')
 def hostels(Hostel_id):
     """ Display hostel page for the requested hostel at home page"""
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cursor.execute('SELECT * FROM Hostel WHERE Hostel_id = %s', (Hostel_id ))
+    cursor.execute('SELECT h.*, o.Owner_name, o.Email, o.Phone_no FROM Hostel h JOIN User o ON h.Owner_id = o.Owner_id WHERE h.Hostel_id = %s', (Hostel_id,))
     hostel = cursor.fetchone()
-    if hostel:
-        session['Hostel_id'] = hostel['Hostel_id']
     return render_template("Hostel.html", hostel=hostel)
 
 

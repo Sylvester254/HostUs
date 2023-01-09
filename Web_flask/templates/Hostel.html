@@ -55,10 +55,16 @@
                         </div> -->
                     </div>
                     <div class="user ">
-                        <p><b>Owner: </b>Kelvin Bart</p>
+                        <p><b>Owner: </b>{{hostel.Owner_name}}</br>
+                            <b>Email: </b>{{hostel.Email}}</br>
+                            <b>Contact: </b>+254{{hostel.Phone_no}}
+                        </p>
+                        <p>Located in {{hostel.Location}} near {{hostel.Campus}}</p>
                     </div>
                     <div class="description ">
+                        <p>Features:</p>
                         <p>{{ hostel.Features }}</p>
+                        <p>Reviews:</br>{{hostel.Reviews}}</p>
                     </div>
                 </article>
         </section>

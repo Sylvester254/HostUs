@@ -58,7 +58,7 @@
         <section class="places ">
             <h1>Hostels</h1>
             {% for place in hostel%}
-            <a href="{{ url_for('hostels')}}">
+            <a href="{{ url_for('hostels', Hostel_id=place.Hostel_id)}}">
                 <article>
 
                     <h2>{{ place.Hostel_name }}</h2>
@@ -81,7 +81,7 @@
                         </div> -->
                     </div>
                     <div class="user ">
-                        <p><b>Owner: </b>Kelvin Bart</p>
+                        <p><b>Owner: </b>{{place.Owner_name}}</p>
                     </div>
                     <div class="description ">
                         <p>{{ place.Features }}</p>
